@@ -27,14 +27,14 @@ Please note once the CoAP client has been implemented, IOWA may be used to add a
   * IOWA Nebraska client: client based on IOWA C library, with bootstrap (soon...)
 
 # Getting started
-## Requirements and first steps
-* The first step is to register an AWS account [https://aws.amazon.com/](https://aws.amazon.com/)
+## Requirements
+* The first step is to register an AWS account: [https://aws.amazon.com/](https://aws.amazon.com/)
 * On your AWS account, you have to go to the [AWS Marketplace's Nebaska page](https://aws.amazon.com/marketplace/pp/IoTerop-Nebraska/B08PPS33V5)
 * When you validate your subscription, you will be redirected to [NEBRASKA main page](https://nebraska.ioterop.com/login), and be asked for a new account creation.
 * Now, you are ready to play with devices...
 
-## Devices...
-NEBRASKA web page is an informational dashboard but all the action can/must be done using API.
+## Initial steps
+NEBRASKA main page is mostly an informational dashboard as all the action can/must be done using API.
 
  ```
  ** TOKEN
@@ -44,7 +44,7 @@ NEBRASKA web page is an informational dashboard but all the action can/must be d
   -d "client_secret=MyPassword" \
   -d "grant_type=client_credentials"
  ```
-you should get a token like:
+you will get a token:
 ```
 "access_token":"abcdefghiaefefecdbeeOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZSI6WyJyZWF12331124pdGUiXSwidGVuYW50SWQiOiI1ZmY0MzFkNDRiZjUzMTA5MTVmODdlM2UiLCJleHAiE2MDk4NTU1OTYsImp0aSI6IkNaaUFfZE9TeS0xUOGutzi1PMTdNazV2LS1mYyIsImNsaWVudF9pZCI6Im9ndWl0ZXJAZnJlZS5mciJ9.BmLF7l2SbO8jYhFsdNrhMwAbnCdEfGnak",
 	"token_type":"bearer",
@@ -53,7 +53,7 @@ you should get a token like:
 	"tenantId":"5cabddef00123456f87e3e",
 	"jti":"ABcD_gOTy-1X4eb-O12ABb5v--fc"
 ```
-Now, we will provision two devices, using a common security scheme (PSK), on MQTT's topic /demo/test_2".
+Now, we will provision two devices, using a common security scheme (here we want PSK scheme):
 ```
 { "common":
   { "deviceSecurity":
@@ -68,7 +68,7 @@ Now, we will provision two devices, using a common security scheme (PSK), on MQT
     ]
 }
 ```
-(please note that pskSecret is base64 encoded: "abcdef" => YWJjZGVm)
+(please note that *pskSecret* is base64 encoded: "abcdef" => YWJjZGVm)
 
 We provision:
 ```
@@ -77,7 +77,7 @@ curl -X POST   --header 'content-type: application/json' \
   --data '{"common": {"deviceSecurity": {"mode": "PSK", "pskIdentity": "MqttIdentity", "pskSecret": "YWJjZGVm"}},"devices": [{"identifier": "Nebraska_client_1", "topic": "/demo/test_1"},{  "identifier": "Nebraska_client_2", "topic": "/demo/test_2"}]}' \
   --url https://nebraska.ioterop-apis.com/api/v1/mqtt/provisioning
 ```
-We immediatly receive an operation id to follow the achievement of the provisioning process:
+We immediatly receive an *operationid* to follow the achievement of the provisioning process:
 ```
   /api/v1/mqtt/provisioning/operations/5fabcd4350ad753c040372fe
 ```
