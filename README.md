@@ -106,4 +106,6 @@ The global mechanism of NEBRASKA is divided in 2 steps:
   The CoAP message (PUT/CON) only need the Path, the Handle... and the value to be published on the MQTT broker.
 
 
-Take a look at the running client (Linux), using AWS MQTT Test broker: [NEBRASKA Demo video](https://f.hubspotusercontent20.net/hubfs/1727672/Nebraska/Nebraska_show.mp4​)
+Take a look at the running client (Linux), using AWS MQTT Test broker: [NEBRASKA Demo video](https://f.hubspotusercontent20.net/hubfs/1727672/Nebraska/Nebraska_show.mp4)
+
+For any question, feel free to contact us: [IoTerop Customer Support](mailto://support@ioterop.com?subject=[Github_NBK]Informations)
