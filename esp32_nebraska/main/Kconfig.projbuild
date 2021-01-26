@@ -1,0 +1,56 @@
+menu "Nebraska sample configuration"
+
+    config NEBRASKA_TARGET_DOMAIN_URI
+        string "Target Uri"
+        default "coaps://ingress.nebraska.ioterop.com:18834"
+        help
+            Target uri for NEBRASKA Server
+
+    config DEMO_NEBRASKA_PSK_KEY
+        string "Preshared Key (PSK) to used in the connection to the CoAP server"
+        depends on COAP_MBEDTLS_PSK
+        default "abcdef"
+        help
+            The Preshared Key to use to encrypt the communicatons. The same key must be
+            used at both ends of the CoAP connection, and the CoaP client must request
+            an URI prefixed with coaps:// instead of coap:// for DTLS to be used.
+
+    config DEMO_NEBRASKA_PSK_IDENTITY
+        string "PSK Client identity (username)"
+        depends on COAP_MBEDTLS_PSK
+        default "MqttIdentity"
+        help
+            The identity (or username) to use to identify to the CoAP server which
+            PSK key to use.
+			
+    config DEMO_NEBRASKA_ENDPOINT
+        string "Client endpoint"
+        default "Nebraska_client_1"
+        help
+            The identity (or endpoint name) to use to identify the client.
+			
+    config DEMO_NEBRASKA_TOPIC
+        string "Topic name"
+        default "/demo/test_1"
+        help
+            The topic to use.
+			
+	config DEMO_NEBRASKA_QOS
+        int "QoS"
+        default 0
+        help
+            The QoS value to set (-1 to be ignored).
+			
+	config DEMO_NEBRASKA_KEEPALIVE
+        int "Keepalive value"
+        default 120
+        help
+            Keepalive value to set (-1 to be ignored).
+			
+	config DEMO_NEBRASKA_RFLAGS
+        int "Retain flag value"
+        default 1
+        help
+            Retain flag value to set (-1 to be ignored).
+			
+endmenu
