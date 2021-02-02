@@ -1,0 +1,42 @@
+#
+# Copyright (c) 2021 IoTerop
+# 
+#
+
+menu "NEBRASKA client sample"
+
+config NEBRASKA_SERVER_HOSTNAME
+	string "CoAP server hostname"
+	default "ingress.nebraska.ioterop.com"
+
+config NEBRASKA_SERVER_PORT
+	int "NEBRASKA server port"
+	default 18834
+
+config NEBRASKA_DEMO_TOPIC
+	string "MQTT publish topic"
+	default "/demo/test_1"
+
+config NEBRASKA_DEMO_CLIENT
+	string "NEBRASKA client"
+	default "Nebraska_client_1"
+
+config COAP_DTLS_SUPPORT
+	bool "CoAP DTLS support"
+	default y
+
+config NEBRASKA_DEMO_PSK_IDENTITY
+	depends on COAP_DTLS_SUPPORT
+	string "NEBRASKA demo PSK identity"
+	default "MqttIdentity"
+
+config NEBRASKA_DEMO_PSK_KEY
+	depends on COAP_DTLS_SUPPORT
+	string "NEBRASKA demo PSK key"
+	default "abcdef"
+
+endmenu
+
+menu "Zephyr Kernel"
+source "Kconfig.zephyr"
+endmenu
