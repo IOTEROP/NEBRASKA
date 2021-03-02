@@ -35,8 +35,8 @@ Please note once the CoAP client has been implemented, IOWA may be used to add a
 * Now, you are ready to play with devices...
 
 **Important note regarding security schemes**:
-Please keep in mind that the pair *PSK_Identity/PSK_Secret* is *GLOBAL* to the Nebraska Platform. It means that, if you use a *pskIdentity* name already used by a different customer, your provisioning will be rejected except if the *pskSecret* is identical to the one defined by customer B
-In few words: use your own complex *pskIdentity* name...
+Please keep in mind that the pair *PSK_Identity/PSK_Secret* is *GLOBAL* to the Nebraska Platform. It means that if you use a *pskIdentity* name already used by a different customer, your provisioning will be rejected unless the *pskSecret* is identical to the one defined by customer B
+In few words: use a complex *pskIdentity* name...
 
 ## Initial steps
 NEBRASKA main page is mostly an informational dashboard as all the action can/must be done using API.
