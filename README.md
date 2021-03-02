@@ -23,8 +23,9 @@ Please note once the CoAP client has been implemented, IOWA may be used to add a
 # Samples
 
   * linux_libcoap: Simple client, based on LibCoAP, using PSK security.
-  * NRF9160 client: code for the nRF9160DK reference board, using LTE modem (soon...)
+  * NRF9160 client: code for the nRF9160DK reference board, using LTE modem
   * IOWA Nebraska client: client based on IOWA C library, with bootstrap (soon...)
+  * simple_script.sh: linux script to show how to provision using API
 
 # Getting started
 ## Requirements
@@ -32,6 +33,10 @@ Please note once the CoAP client has been implemented, IOWA may be used to add a
 * On your AWS account, you have to go to the [AWS Marketplace's Nebaska page](https://aws.amazon.com/marketplace/pp/IoTerop-Nebraska/B08PPS33V5)
 * When you validate your subscription, you will be redirected to [NEBRASKA main page](https://nebraska.ioterop.com/login), and be asked for a new account creation.
 * Now, you are ready to play with devices...
+
+**Important note regarding security schemes**:
+Please keep in mind that the pair *PSK_Identity/PSK_Secret* is *GLOBAL* to the Nebraska Platform. It means that, if you use a *pskIdentity* name already used by a different customer, your provisioning will be rejected except if the *pskSecret* is identical to the one defined by customer B
+In few words: use your own complex *pskIdentity* name...
 
 ## Initial steps
 NEBRASKA main page is mostly an informational dashboard as all the action can/must be done using API.
