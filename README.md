@@ -6,19 +6,20 @@ NEBRASKA makes connecting NB-IoT solutions to Amazon's AWS IoT Core easy
 Nebraska is a secure, reliable bridge for connecting NB-IoT solutions to Amazon’s AWS IoT Core. Nebraska uses CoAP, an NB-IoT optimized transport protocol, minimizing bandwidth requirements easing integration with the internet.
 
 
-
 ![NEBRASKA Flow](.images/Neb-Diagram.png)
 
 # What is Nebraska?
 
 NEBRASKA’s CoAP services have been developed by IoTerop on top of Amazon Web Services. NEBRASKA is a subset of ALASKA, IoTerop’s device management platform supporting LwM2M.
 
-NEBRASKA can be use with or without IoTerop’s IOWA.
+NEBRASKA runs on any CoAP libraries !
 
-Creation of the CoAP client and data-feed may be done using IoTerop’s IOWA, a C library allowing developers to quickly implement CoAP for data transport as well as DTLS and connection identifiers (CID).
-Code samples are available on the IOWA GitHub page.
+(IOTEROP interlude)
 
-Please note once the CoAP client has been implemented, IOWA may be used to add additional LwM2M device management features.
+You can also use IOTEROP's IOWA if you want additional features. IOWA is a C library allowing developers to quickly implement CoAP for data transport as well as DTLS and connection identifiers (CID).
+Please note once the CoAP client has been implemented, IOWA may be used to add additional LwM2M device management features (e.g. bootstrapping.
+
+(End of IOTEROP's interlude)
 
 # Samples
 
@@ -37,6 +38,11 @@ Please note once the CoAP client has been implemented, IOWA may be used to add a
 **Important note regarding security schemes**:
 Please keep in mind that the pair *PSK_Identity/PSK_Secret* is *GLOBAL* to the Nebraska Platform. It means that if you use a *pskIdentity* name already used by a different customer, your provisioning will be rejected unless the *pskSecret* is identical to the one defined by customer B
 In few words: use a complex *pskIdentity* name...
+
+## FAQ
+This repo comprises a wiki with a NEBRASKA FAQ.
+
+To view, click the [Wiki](https://github.com/IOTEROP/NEBRASKA/wiki) link above. Or proceed directly to the [NEBRASKA Technical FAQ](https://github.com/IOTEROP/NEBRASKA/wiki/FAQ).
 
 ## Initial steps
 NEBRASKA main page is mostly an informational dashboard as all the action can/must be done using API.
