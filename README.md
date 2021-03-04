@@ -10,14 +10,13 @@ Nebraska is a secure, reliable bridge for connecting NB-IoT solutions to Amazon�
 
 # What is Nebraska?
 
-NEBRASKA’s CoAP services have been developed by IoTerop on top of Amazon Web Services. NEBRASKA is a subset of ALASKA, IoTerop’s device management platform supporting LwM2M.
+Nebraska is IoTerop's secure bridge for connecting IoT solutions to Amazon Web Services IoT Core using CoAP. *NEBRASKA is a subset of ALASKA, IoTerop's LwM2M device management platform*.
 
-NEBRASKA runs on any CoAP libraries !
+Devices can connect to NEBRASKA using any CoAP library.
 
 (IOTEROP interlude)
 
-You can also use IOTEROP's IOWA if you want additional features. IOWA is a C library allowing developers to quickly implement CoAP for data transport as well as DTLS and connection identifiers (CID).
-Please note once the CoAP client has been implemented, IOWA may be used to add additional LwM2M device management features (e.g. bootstrapping.
+*Developers can also simplify application development by using IOTEROP's IOWA SDK. IOWA is a C library allowing developers to quickly implement CoAP for data transport and DTLS 1.2 and connection identifiers (CID), providing a secure, efficient mechanism for transferring data. Please note CoAP implementations using IOWA provides the possibility of adding LwM2M device management features, such as bootstrapping and FOTA, future-proofing solutions*.
 
 (End of IOTEROP's interlude)
 
